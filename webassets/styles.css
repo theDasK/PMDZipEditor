@@ -1,0 +1,153 @@
+body {
+    /*background-color: #707070;*/
+	/*background: url("back.png") no-repeat fixed center;*/
+    color: #FFFFFF;
+    font-family: 'Verdana', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+	padding: 0px 0px 0px;
+}
+/*
+a {
+	color: #68D068;
+}
+
+h1 {
+	text-align: center;
+	font-size:60px;
+	color: #FFCE00;
+	letter-spacing: 3px;
+	text-shadow: 2px 2px 5px #68D068;
+	background-color: #333333;
+	border-style: ridge;
+	border-width: 8px 12px;
+	border-color: #68D068;
+	border-radius: 10px;
+	margin: 5px 30% 0px;
+}
+
+h2, h3 {
+	text-align: center;
+	font-size:25px;
+	color: #FFCE00;
+	letter-spacing: 3px;
+	text-shadow: 2px 2px 5px #68D068;
+	background-color: #333333;
+	border-style: ridge;
+	border-width: 8px 12px;
+	border-color: #68D068;
+	border-radius: 10px;
+	margin: 5px 30% 10px;
+	padding: 10px;
+}
+
+h3 {
+	margin: -75px 30% 10px;
+}*/
+
+.section {
+	background-color: #333333;
+	border-style: ridge;
+	border-width: 8px 12px;
+	border-color: #68D068;
+	border-radius: 10px;
+	margin: 0px 15% 20px;
+	padding: 0px 10px;
+}
+
+#drop_zone {
+	border: 5px solid blue;
+	width:  200px;
+	height: 100px;
+}
+
+.bb {
+	border: 2px solid black;
+}
+
+canvas, img {
+	image-rendering: -moz-crisp-edges;
+	image-rendering: pixelated;
+}
+
+#progressBar {
+	width: 80%;
+	background-color: grey;
+}
+
+#progressBarFill {
+	width: 1%;
+	height: 30px;
+	background-color: green;
+}
+
+.arr {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	overflow: hidden;
+}
+
+.arrUL {background: url("arrowInactive.png") 0px 0px;}
+.arrUL-A {background: url("arrowActive.png") 0px 0px;}
+.arrUL-D {background: url("arrowDisabled.png") 0px 0px;}
+.arrU {background: url("arrowInactive.png") -40px 0px;}
+.arrU-A {background: url("arrowActive.png") -40px 0px;}
+.arrU-D {background: url("arrowDisabled.png") -40px 0px;}
+.arrUR {background: url("arrowInactive.png") -80px 0px;}
+.arrUR-A {background: url("arrowActive.png") -80px 0px;}
+.arrUR-D {background: url("arrowDisabled.png") -80px 0px;}
+.arrL {background: url("arrowInactive.png") 0px -40px;}
+.arrL-A {background: url("arrowActive.png") 0px -40px;}
+.arrL-D {background: url("arrowDisabled.png") 0px -40px;}
+.arrCent {background: url("arrowInactive.png") -40px -40px;}
+.arrCent-A {background: url("arrowActive.png") -40px -40px;}
+.arrCent-D {background: url("arrowDisabled.png") -40px -40px;}
+.arrR {background: url("arrowInactive.png") -80px -40px;}
+.arrR-A {background: url("arrowActive.png") -80px -40px;}
+.arrR-D {background: url("arrowDisabled.png") -80px -40px;}
+.arrDL {background: url("arrowInactive.png") 0px -80px;}
+.arrDL-A {background: url("arrowActive.png") 0px -80px;}
+.arrDL-D {background: url("arrowDisabled.png") 0px -80px;}
+.arrD {background: url("arrowInactive.png") -40px -80px;}
+.arrD-A {background: url("arrowActive.png") -40px -80px;}
+.arrD-D {background: url("arrowDisabled.png") -40px -80px;}
+.arrDR {background: url("arrowInactive.png") -80px -80px;}
+.arrDR-A {background: url("arrowActive.png") -80px -80px;}
+.arrDR-D {background: url("arrowDisabled.png") -80px -80px;}
+.arrPlay {background: url("arrowInactive.png") -80px -40px;}
+.arrPlay-A {background: url("arrowActive.png") -80px -40px;}
+.arrPlay-D {background: url("arrowDisabled.png") -80px -40px;}
+.arrStop {background: url("arrowInactive.png") 0px -120px;}
+.arrStop-A {background: url("arrowActive.png") 0px -120px;}
+.arrStop-D {background: url("arrowDisabled.png") 0px -120px;}
+.arrStep {background: url("arrowInactive.png") -40px -120px;}
+.arrStep-A {background: url("arrowActive.png") -40px -120px;}
+.arrStep-D {background: url("arrowDisabled.png") -40px -120px;}
+
+.arrowsdivs {
+	display: inline-block;
+	width: 120px;
+	overflow: hidden;
+}
+
+.helpBox {
+    width: 250px; 
+    border: #000 2px solid;
+    background:#F8F8F8;
+    position: relative;
+    top: 5px;
+    left:15px;
+    display:none;
+    padding: 0 20px 20px 20px;
+    z-index: 1000000;
+}
+
+.helpQM  {
+    cursor:pointer;
+    width: 5px;
+}
+
+#helpFiles:hover +#helpBFiles {
+    display:block;
+}
