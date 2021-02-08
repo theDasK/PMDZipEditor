@@ -28,13 +28,30 @@
 
     <div class="bb">
         <table>
-            <tr><td id="" class="arrUL" onclick=""></td><td class="arrU" onclick=""></td><td class="arrUR" onclick=""></td></tr>
-            <tr><td class="arrL" onclick=""></td><td class="arrCent" onclick=""></td><td class="arrR" onclick=""></td></tr>
-            <tr><td class="arrDL" onclick=""></td><td class="arrD" onclick=""></td><td class="arrDR" onclick=""></td></tr>
+            <tr><td id="dirArrUL" class="dirArr arrUL" onclick="changeDirection(5)"></td><td id="dirArrU" class="dirArr arrU" onclick="changeDirection(4)"></td><td id="dirArrUR" class="dirArr arrUR" onclick="changeDirection(3)"></td></tr>
+            <tr><td id="dirArrL" class="dirArr arrL" onclick="changeDirection(6)"></td><td id="dirArrCent" class="dirArr arrCent disabled" onclick="changeDirection(8)"></td><td id="dirArrR" class="dirArr arrR" onclick="changeDirection(2)"></td></tr>
+            <tr><td id="dirArrDL" class="dirArr arrDL" onclick="changeDirection(7)"></td><td id="dirArrD" class="dirArr arrD active" onclick="changeDirection(0)"></td><td id="dirArrDR" class="dirArr arrDR" onclick="changeDirection(1)"></td></tr>
         </table>
         <table>
-            <tr><td class="arr arrPlay" onclick=""></td><td class="arr arrStop" onclick=""></td><td class="arr arrStep" onclick=""></td></tr>
+            <tr><td id="conArrPlay" class="conArr active" onclick="startDraw()"></td><td id="conArrStop" class="conArr" onclick="stopDraw()"></td><td id="conArrStep" class="conArr" onclick="stepDraw()"></td></tr>
         </table>
+        <table>
+            <tr><td id="speed0" class="speedIcon"></td>
+                <td id="speed1" class="speedIcon active" onclick="changeScale(1)"></td>
+                <td id="speed2" class="speedIcon" onclick="changeScale(2)"></td>
+                <td id="speed3" class="speedIcon" onclick="changeScale(3)"></td>
+                <td id="speed4" class="speedIcon" onclick="changeScale(4)"></td>
+            </tr>
+        </table>
+        <table>
+            <tr><td id="zoom0" class="zoomIcon"></td>
+                <td id="zoom1" class="zoomIcon active" onclick="changeScale(1)"></td>
+                <td id="zoom2" class="zoomIcon" onclick="changeScale(2)"></td>
+                <td id="zoom3" class="zoomIcon" onclick="changeScale(3)"></td>
+                <td id="zoom4" class="zoomIcon" onclick="changeScale(4)"></td>
+            </tr>
+        </table>
+        
         <canvas id="frame" width="150" height="150"></canvas>
     </div>
     <div id="progressBar">
@@ -42,22 +59,6 @@
     </div>
     <div class="bb">
         <select id="selectAnim" onchange="changeAnim()" name="anims"></select>
-        <select id="selectDirect" onchange="changeDirection()" name="selectDirect">
-            <option value="0">d</option>
-            <option value="1">dr</option>
-            <option value="2">r</option>
-            <option value="3">ur</option>
-            <option value="4">u</option>
-            <option value="5">ul</option>
-            <option value="6">l</option>
-            <option value="7">dl</option>
-        </select>
-        scale <select onchange="changeScale()" id="selectScale">
-            <option value="1">1x</option>
-            <option value="2">2x</option>
-            <option value="3">3x</option>
-            <option value="4">4x</option>
-        </select>
         speed <select onchange="changeSpeed()" id="selectSpeed">
             <option value="1">1x</option>
             <option value="2">0.5x</option>
@@ -203,7 +204,7 @@
     var wPMDSprite;
     var dctx = document.getElementById('frame').getContext('2d');
     var dOffsets = false, dShadow = true, dBackground = true;
-    var dAnim = "Walk", dDirection = 0, dFrame = 0, dWait = 0, dStop = false, dScale = 1, dSpeed=1;
+    var dAnim = "Walk", dDirection = 0, dOneDir = false, dFrame = 0, dWait = 0, dStop = false, dScale = 1, dSpeed=1;
     var backoffx = -9, backoffy = -7;
 
     var imgBackground = new Image();

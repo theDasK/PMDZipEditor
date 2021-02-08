@@ -1,5 +1,6 @@
-var posibleNames = ["Walk","Attack","Strike","Shoot","Strike","Sleep","Hurt","Idle","Swing","Double","Hop","Charge","Rotate","EventSleep","Wake","Eat","Tumble","Pose","Pull","Pain","Float","DeepBreath","Nod","Sit","LookUp","Sink","Trip","Laying","LeapForth","Head","Cringe","LostBalance","TumbleBack","Faint","HitGround","Special1"];
+var POSIBLENAMES = ["Walk","Attack","Strike","Shoot","Strike","Sleep","Hurt","Idle","Swing","Double","Hop","Charge","Rotate","EventSleep","Wake","Eat","Tumble","Pose","Pull","Pain","Float","DeepBreath","Nod","Sit","LookUp","Sink","Trip","Laying","LeapForth","Head","Cringe","LostBalance","TumbleBack","Faint","HitGround","Special1"];
 var DIRNAMES = ["Down","Down Right","Right","Up Right","Up","Up Left","Left","Down Left"];
+var DIRSRTNAMES = ["dirArrD","dirArrDR","dirArrR","dirArrUR","dirArrU","dirArrUL","dirArrL","dirArrDL"];
 
 function cloneObj (obj){ //Ok, js, are you OOP or not?
 

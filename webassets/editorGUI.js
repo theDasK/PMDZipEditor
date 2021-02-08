@@ -73,11 +73,7 @@ function fillDirectionSelect(){
     let select = document.getElementById("selectDirect");
     select.innerHTML = "";
 
-    if (wPMDSprite["anims"][dAnim]["frames"].length == 1){
-        select.innerHTML = "<option value='0'>only</option>";
-    } else {
-        select.innerHTML = "<option value='0'>d</option><option value='1'>dr</option><option value='2'>r</option><option value='3'>ur</option><option value='4'>u</option><option value='5'>ul</option><option value='6'>l</option><option value='7'>dl</option>"
-    }
+    
     select.getElementsByTagName("option")[0].checked
 }
 
@@ -165,12 +161,12 @@ function addAnimation(){
 
     document.getElementById('selNewName').innerHTML = "";
 
-    for (i in posibleNames){
-        if (posibleNames[i] in wPMDSprite.anims) continue;
+    for (i in POSIBLENAMES){
+        if (POSIBLENAMES[i] in wPMDSprite.anims) continue;
 
         let option = document.createElement("option");
-        option.innerHTML = posibleNames[i];
-        option.setAttribute("value", posibleNames[i]);
+        option.innerHTML = POSIBLENAMES[i];
+        option.setAttribute("value", POSIBLENAMES[i]);
         document.getElementById('selNewName').appendChild(option);
     }
     changeNewName();
@@ -222,9 +218,17 @@ function changeAnim(){
     document.getElementById('divFramesTweek').hidden = bool;
     document.getElementById('butAddFrame').disabled = bool;
     document.getElementById('butRemoveFrame').disabled = bool;
+
     
-    fillDirectionSelect();
+    if (wPMDSprite["anims"][dAnim]["frames"].length == 1) {
+        dOneDir = true;
+        changeDirection(0);
+    } else {
+        dOneDir = false;
+    }
+
     fillFrameHolder();
+    changeDirection();
     changeSpecialFrame();
     restartDraw();
 }
@@ -247,11 +251,13 @@ function changeChkHighlight(){
     offhighlight = document.getElementById('chkhighlight').checked;
 }
 
-function changeDirection(){
+function changeDirection(dir = dDirection){
 
     changeSelectedFrame(0);
 
-    dDirection = parseInt(document.getElementById('selectDirect').value);
+    dDirection = dir;
+
+    updateArrows();
 
     if (dStop) jumpToFrame(dFrame);
 }
@@ -276,7 +282,7 @@ function changeSpeed(){
 function changeNewName(){
 
     let val = document.getElementById('selNewName').value;
-    document.getElementById('numbNewIndex').value = posibleNames.indexOf(val);
+    document.getElementById('numbNewIndex').value = POSIBLENAMES.indexOf(val);
 }
 
 function changeFrameDuration(frame, element){
@@ -328,6 +334,30 @@ function changeChkCopyOf(){
 
     document.getElementById('selCopyOf').disabled = !bool;
     document.getElementById('butCopyOf').disabled = !bool;
+}
+
+function updateArrows(){
+
+    let arrows = Array.from(document.getElementsByClassName('dirArr'));
+
+    if (dOneDir) {
+        
+        for (let elem in arrows){
+            arrows[elem].classList.remove("active");
+            arrows[elem].classList.add("disabled");
+        }
+        document.getElementById('dirArrCent').classList.remove("disabled");
+        document.getElementById('dirArrCent').classList.add("active");
+    } else {
+
+        for (let elem in arrows){
+            arrows[elem].classList.remove("disabled","active");
+        }
+        document.getElementById('dirArrCent').classList.add("disabled");
+        document.getElementById('dirArrCent').classList.remove("active");
+
+        document.getElementById(DIRSRTNAMES[dDirection]).classList.add("active");
+    }
 }
 
 function updateWarningsDiv(entry = false){

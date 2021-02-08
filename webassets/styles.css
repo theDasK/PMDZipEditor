@@ -81,49 +81,74 @@ canvas, img {
 	background-color: green;
 }
 
-.arr {
+.speedIcon, .zoomIcon{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	overflow: hidden;
+}
+
+.conArr, .dirArr {
 	display: inline-block;
 	width: 40px;
 	height: 40px;
 	overflow: hidden;
 }
 
-.arrUL {background: url("arrowInactive.png") 0px 0px;}
-.arrUL-A {background: url("arrowActive.png") 0px 0px;}
-.arrUL-D {background: url("arrowDisabled.png") 0px 0px;}
-.arrU {background: url("arrowInactive.png") -40px 0px;}
-.arrU-A {background: url("arrowActive.png") -40px 0px;}
-.arrU-D {background: url("arrowDisabled.png") -40px 0px;}
-.arrUR {background: url("arrowInactive.png") -80px 0px;}
-.arrUR-A {background: url("arrowActive.png") -80px 0px;}
-.arrUR-D {background: url("arrowDisabled.png") -80px 0px;}
-.arrL {background: url("arrowInactive.png") 0px -40px;}
-.arrL-A {background: url("arrowActive.png") 0px -40px;}
-.arrL-D {background: url("arrowDisabled.png") 0px -40px;}
-.arrCent {background: url("arrowInactive.png") -40px -40px;}
-.arrCent-A {background: url("arrowActive.png") -40px -40px;}
-.arrCent-D {background: url("arrowDisabled.png") -40px -40px;}
-.arrR {background: url("arrowInactive.png") -80px -40px;}
-.arrR-A {background: url("arrowActive.png") -80px -40px;}
-.arrR-D {background: url("arrowDisabled.png") -80px -40px;}
-.arrDL {background: url("arrowInactive.png") 0px -80px;}
-.arrDL-A {background: url("arrowActive.png") 0px -80px;}
-.arrDL-D {background: url("arrowDisabled.png") 0px -80px;}
-.arrD {background: url("arrowInactive.png") -40px -80px;}
-.arrD-A {background: url("arrowActive.png") -40px -80px;}
-.arrD-D {background: url("arrowDisabled.png") -40px -80px;}
-.arrDR {background: url("arrowInactive.png") -80px -80px;}
-.arrDR-A {background: url("arrowActive.png") -80px -80px;}
-.arrDR-D {background: url("arrowDisabled.png") -80px -80px;}
-.arrPlay {background: url("arrowInactive.png") -80px -40px;}
-.arrPlay-A {background: url("arrowActive.png") -80px -40px;}
-.arrPlay-D {background: url("arrowDisabled.png") -80px -40px;}
-.arrStop {background: url("arrowInactive.png") 0px -120px;}
-.arrStop-A {background: url("arrowActive.png") 0px -120px;}
-.arrStop-D {background: url("arrowDisabled.png") 0px -120px;}
-.arrStep {background: url("arrowInactive.png") -40px -120px;}
-.arrStep-A {background: url("arrowActive.png") -40px -120px;}
-.arrStep-D {background: url("arrowDisabled.png") -40px -120px;}
+#dirArrUL {background: url("arrowInactive.png") 0px 0px;}
+#dirArrUL.active {background: url("arrowActive.png") 0px 0px;}
+#dirArrUL.disabled {background: url("arrowDisabled.png") 0px 0px;}
+#dirArrU {background: url("arrowInactive.png") -40px 0px;}
+#dirArrU.active {background: url("arrowActive.png") -40px 0px;}
+#dirArrU.disabled {background: url("arrowDisabled.png") -40px 0px;}
+#dirArrUR {background: url("arrowInactive.png") -80px 0px;}
+#dirArrUR.active {background: url("arrowActive.png") -80px 0px;}
+#dirArrUR.disabled {background: url("arrowDisabled.png") -80px 0px;}
+#dirArrL {background: url("arrowInactive.png") 0px -40px;}
+#dirArrL.active {background: url("arrowActive.png") 0px -40px;}
+#dirArrL.disabled {background: url("arrowDisabled.png") 0px -40px;}
+#dirArrCent {background: url("arrowInactive.png") -40px -40px;}
+#dirArrCent.active {background: url("arrowActive.png") -40px -40px;}
+#dirArrCent.disabled {background: url("arrowDisabled.png") -40px -40px;}
+#dirArrR {background: url("arrowInactive.png") -80px -40px;}
+#dirArrR.active {background: url("arrowActive.png") -80px -40px;}
+#dirArrR.disabled {background: url("arrowDisabled.png") -80px -40px;}
+#dirArrDL {background: url("arrowInactive.png") 0px -80px;}
+#dirArrDL.active {background: url("arrowActive.png") 0px -80px;}
+#dirArrDL.disabled {background: url("arrowDisabled.png") 0px -80px;}
+#dirArrD {background: url("arrowInactive.png") -40px -80px;}
+#dirArrD.active {background: url("arrowActive.png") -40px -80px;}
+#dirArrD.disabled {background: url("arrowDisabled.png") -40px -80px;}
+#dirArrDR {background: url("arrowInactive.png") -80px -80px;}
+#dirArrDR.active {background: url("arrowActive.png") -80px -80px;}
+#dirArrDR.disabled {background: url("arrowDisabled.png") -80px -80px;}
+
+#conArrPlay {background: url("arrowInactive.png") -80px -40px;}
+#conArrPlay.active {background: url("arrowActive.png") -80px -40px;}
+#conArrStop {background: url("arrowInactive.png") 0px -120px;}
+#conArrStop.active {background: url("arrowActive.png") 0px -120px;}
+#conArrStep {background: url("arrowInactive.png") -40px -120px;}
+#conArrStep.active {background: url("arrowActive.png") -40px -120px;}
+
+#speed0 {background: url("arrowInactive.png") 0px -148px;}
+#speed1 {background: url("arrowInactive.png") -24px -148px;}
+#speed1.active {background: url("arrowActive.png") -24px -148px;}
+#speed2 {background: url("arrowInactive.png") -48px -148px;}
+#speed2.active {background: url("arrowActive.png") -48px -148px;}
+#speed3 {background: url("arrowInactive.png") -72px -148px;}
+#speed3.active {background: url("arrowActive.png") -72px -148px;}
+#speed4 {background: url("arrowInactive.png") -96px -148px;}
+#speed4.active {background: url("arrowActive.png") -96px -148px;}
+
+#zoom0 {background: url("arrowInactive.png") 0px -172px;}
+#zoom1 {background: url("arrowInactive.png") -24px -172px;}
+#zoom1.active {background: url("arrowActive.png") -24px -172px;}
+#zoom2 {background: url("arrowInactive.png") -48px -172px;}
+#zoom2.active {background: url("arrowActive.png") -48px -172px;}
+#zoom3 {background: url("arrowInactive.png") -72px -148px;}
+#zoom3.active {background: url("arrowActive.png") -72px -148px;}
+#zoom4 {background: url("arrowInactive.png") -96px -148px;}
+#zoom4.active {background: url("arrowActive.png") -96px -148px;}
 
 .arrowsdivs {
 	display: inline-block;

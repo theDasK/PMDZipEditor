@@ -82,10 +82,16 @@ function startDraw(){
     dWait = 0;
     dStop = false;
 
+    document.getElementById("conArrPlay").classList.add("active");
+    document.getElementById("conArrStop").classList.remove("active");
+
     drawFrame();
 }
 
 function stopDraw(){
+
+    document.getElementById("conArrStop").classList.add("active");
+    document.getElementById("conArrPlay").classList.remove("active");
 
     dStop = true;
 }
